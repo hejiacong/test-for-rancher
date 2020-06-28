@@ -1,3 +1,3 @@
-FROM pause
+FROM busyboxtest
 COPY test /test
-ENTRYPOINT ["/pause"]
+CMD tail -f /dev/null
