@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deploy
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - image: test:test
+        imagePullPolicy: Always
+        name: test-deploy-pod
+        tty: true
