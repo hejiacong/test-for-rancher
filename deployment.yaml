@@ -4,10 +4,16 @@ metadata:
   name: test-deploy
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      test-pod: true
   template:
+    metadata: 
+      labels:
+        test-pod: true
     spec:
       containers:
-      - image: test:test
+      - image: test-image
         imagePullPolicy: Always
         name: test-deploy-pod
         tty: true
