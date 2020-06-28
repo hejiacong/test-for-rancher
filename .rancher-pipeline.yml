@@ -1,0 +1,16 @@
+stages:
+- name: 第一阶段
+  steps:
+  - runScriptConfig:
+      image: java:8
+      shellScript: java -version
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: test
+  when:
+    event:
+      include:
+      - push
+timeout: 60
+notification: {}
