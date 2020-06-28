@@ -4,9 +4,8 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: test
-  - applyYamlConfig:
-      path: ./deployment.yaml
+      tag: test-image
+      registry: 127.0.0.1:34382
   when:
     event: {}
 timeout: 60
