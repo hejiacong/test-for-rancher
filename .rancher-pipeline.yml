@@ -1,13 +1,4 @@
 stages:
-- name: 生成镜像
-  steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: test-image
-      registry: 127.0.0.1:34382
-  when:
-    event: {}
 - name: 发布应用
   steps:
   - applyYamlConfig:
