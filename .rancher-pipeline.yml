@@ -1,5 +1,5 @@
 stages:
-- name: 第一阶段
+- name: 生成镜像
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
@@ -8,5 +8,9 @@ stages:
       registry: 127.0.0.1:34382
   when:
     event: {}
+- name: 发布应用
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
 timeout: 60
 notification: {}
