@@ -3,5 +3,16 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
+  when:
+    event:
+      include:
+      - tag
+- name: 发布镜像
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: test-image
+      registry: 127.0.0.1:34382
 timeout: 60
 notification: {}
