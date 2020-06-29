@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      test-pod: true
+      app: test-pod
   template:
     metadata: 
       labels:
-        test-pod: true
+        app: test-pod
     spec:
       containers:
       - image: test-image
