@@ -13,7 +13,7 @@ spec:
         app: test-pod
     spec:
       containers:
-      - image: test-image
+      - image: docker-registry.p-xmb5d-pipeline/test-image:latest
         imagePullPolicy: Always
         name: test-deploy-pod
         tty: true
