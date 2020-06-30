@@ -12,7 +12,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: test-image
+      tag: docker-registry.p-xmb5d-pipeline/test-image:latest
       registry: 127.0.0.1:34382
 timeout: 60
 notification: {}
